@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url,include
+
 from StuApp import views as ht_index
+from guestbook import views as guest_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'',ht_index.index,name= 'index'),
+    url(r'^deleteid',guest_views.deleteid),
+    url(r'^delete',guest_views.delete),
+    url(r'^save/',guest_views.save),
+    url(r'^create',guest_views.create),
+    url('^comment/',guest_views.comment),
+    url(r'', ht_index.index, name='index'),
 ]
