@@ -19,4 +19,3 @@ class Msg(models.Model):
     def __str__(self):
         tpl = '<Msg:[username={username},time={time},txt={txt},title={title}]>'
         return tpl.format(usrname = self.username, time = self.time, txt = self.txt, title = self.title)
-

@@ -7,9 +7,13 @@ class URLDB(models.Model):
     URL =models.CharField(max_length=100)
     Time = models.CharField(max_length=100)
     def __str__(self):
-        return self.Time
+        tpl = '<URLDB:[Num={Num},Name={Name},URL={URL},Time={Time}]>'
+        return tpl.format(Num=self.Num,Name=self.Name,URL=self.URL,Time=self.Time)
 
 
 class TabName(models.Model):
     Num = models.IntegerField()
     TabName = models.CharField(max_length=100)
+    def __str__(self):
+        tpl = '<TabName:[Num={Num},TabName={TabName}]>'
+        return tpl.format(Num=self.Num,TabName=self.TabName)
