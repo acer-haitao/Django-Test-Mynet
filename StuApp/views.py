@@ -15,6 +15,6 @@ def index(request):
     li_dict['test'] = sorted(dict(li_dict).items())#将chainmap的li_dict经过dict转换成字典 转换成items是为了取key，value值 sorted排序
     li_dict =li_dict.new_child()
     li_dict.parents
-    print(dict(li_dict))
+    #print(dict(li_dict))
 
     return render(request, "right.html", context=dict(li_dict))
