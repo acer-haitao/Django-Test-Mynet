@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from comment.pageshow import Pagination
 # Create your views here.
-
+cur_page = 1
 def net163(request):
+    global cur_page#处理报错local variable 'cur_page1' referenced before assignment
     try:
         #cur_page = int(request.GET.get('cur_page', '1'))#跳转页码
         if request.POST:
