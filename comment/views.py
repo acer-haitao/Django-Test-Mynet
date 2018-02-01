@@ -4,7 +4,13 @@ from comment.pageshow import Pagination
 
 def net163(request):
     try:
-        cur_page = int(request.GET.get('cur_page', '1'))#跳转页码
+        #cur_page = int(request.GET.get('cur_page', '1'))#跳转页码
+        if request.POST:
+            cur_page = int(request.POST['num'])
+        elif request.GET:
+            cur_page = int(request.GET['cur_page'])
+        else:
+            print("数据传输有误")
     except ValueError:
         cur_page = 1
     pagination = Pagination.create_pagination(
