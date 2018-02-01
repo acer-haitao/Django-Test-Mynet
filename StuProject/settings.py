@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'StuApp',
-    'guestbook',
-    'comment',
+    'StuApp',#网页链接
+    'guestbook',#留言
+    'comment',#网易评论
 ]
 
 MIDDLEWARE = [

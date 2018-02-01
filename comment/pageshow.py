@@ -54,7 +54,7 @@ class Pagination(object):
         # 导入模块
         exec(import_str)
 
-        start_pos = (cur_page - 1) * one_page_data_size
+        start_pos = (cur_page - 1) * one_page_data_size#开始位置
         end_pos = start_pos + one_page_data_size
 
         # 查找需要的model数据
@@ -109,13 +109,13 @@ class Pagination(object):
         page_items = range(int(start_page), int(end_page + 1))#python3 range范围float报错
         pagination = {
             'objs': objs,
-            'all_obj_counts': all_obj_counts,
-            'start_pos': start_pos,
-            'end_pos': end_pos,
+            'all_obj_counts': int(all_obj_counts),
+            'start_pos': int(start_pos),
+            'end_pos': int(end_pos),
             'all_page': int(all_page),
-            'cur_page': cur_page,
-            'pre_page': pre_page,
-            'next_page': next_page,
+            'cur_page': int(cur_page),
+            'pre_page': int(pre_page),
+            'next_page': int(next_page),
             'page_items': page_items,
             'start_page_omit_symbol': start_page_omit_symbol,
             'end_page_omit_symbol': end_page_omit_symbol,

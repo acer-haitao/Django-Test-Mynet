@@ -7,31 +7,39 @@
 </head>
 <body>
 <nav aria-label="Page navigation">
-  <ul class="pager pagination-lg">
-   {% if pagination.cur_page != 1 %}
-    <li><a href="?cur_page=1"><<</a></li>
-    <li>
-      <a href="?cur_page={{ pagination.pre_page }}" aria-label="Previous">
-        <span aria-hidden="true">«</span>
-      </a>
-    </li>
-   {% endif %}
-   {% for page_item in pagination.page_items %}
-    {% if page_item == pagination.cur_page %}
-        <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
-    {% else %}
-        <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
-    {% endif %}
-   {% endfor%}
-   {% if pagination.cur_page != pagination.all_page %}
-    <li>
-      <a href="?cur_page={{ pagination.next_page }}" aria-label="Next">
-        <span aria-hidden="true">»</span>
-      </a>
-    </li>
-    <li><a href="?cur_page={{ pagination.all_page }}">>></a></li>
-   {% endif %}
-  </ul>
+    <ul class="pager pagination-lg">
+        {% if pagination.cur_page != 1 %}
+            <li><a href="?cur_page=1">首页</a></li>
+            <li>
+                <a href="?cur_page={{ pagination.pre_page }}" aria-label="Previous">
+                    <span aria-hidden="true">上一页</span>
+                </a>
+            </li>
+        {% endif %}
+        {% for page_item in pagination.page_items %}
+            {% if page_item == pagination.cur_page %}
+                <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
+            {% else %}
+                <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
+            {% endif %}
+        {% endfor%}
+        {% if pagination.cur_page != pagination.all_page %}
+            <li>
+                <a href="?cur_page={{ pagination.next_page }}" aria-label="Next">
+                    <span aria-hidden="true">下一页</span>
+                </a>
+            </li>
+            <li><a href="?cur_page={{ pagination.all_page }}">尾页</a></li>
+            <li class="active">
+                <a>第{{ pagination.cur_page }}页-共{{pagination.all_page }}页
+                    <form>
+                        <input type="number"  value="{{ pagination.all_page }}">
+                        <button type="button" class="btnSure">确定</button>
+                    </form>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
 </nav>
 {% for txt in pagination.objs %}
     <table class="table">
@@ -49,31 +57,32 @@
     </table>
 {% endfor %}
 <nav aria-label="Page navigation">
-  <ul class="pager pagination-lg">
-   {% if pagination.cur_page != 1 %}
-    <li><a href="?cur_page=1"><<</a></li>
-    <li>
-      <a href="?cur_page={{ pagination.pre_page }}" aria-label="Previous">
-        <span aria-hidden="true">«</span>
-      </a>
-    </li>
-   {% endif %}
-   {% for page_item in pagination.page_items %}
-    {% if page_item == pagination.cur_page %}
-        <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
-    {% else %}
-        <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
-    {% endif %}
-   {% endfor%}
-   {% if pagination.cur_page != pagination.all_page %}
-    <li>
-      <a href="?cur_page={{ pagination.next_page }}" aria-label="Next">
-        <span aria-hidden="true">»</span>
-      </a>
-    </li>
-    <li><a href="?cur_page={{ pagination.all_page }}">>></a></li>
-   {% endif %}
-  </ul>
+    <ul class="pager pagination-lg">
+        {% if pagination.cur_page != 1 %}
+            <li><a href="?cur_page=1">首页</a></li>
+            <li>
+                <a href="?cur_page={{ pagination.pre_page }}" aria-label="Previous">
+                    <span aria-hidden="true">上一页</span>
+                </a>
+            </li>
+        {% endif %}
+        {% for page_item in pagination.page_items %}
+            {% if page_item == pagination.cur_page %}
+                <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
+            {% else %}
+                <li><a href="?cur_page={{ page_item }}">{{ page_item }}</a></li>
+            {% endif %}
+        {% endfor%}
+        {% if pagination.cur_page != pagination.all_page %}
+            <li>
+                <a href="?cur_page={{ pagination.next_page }}" aria-label="Next">
+                    <span aria-hidden="true">下一页</span>
+                </a>
+            </li>
+            <li><a href="?cur_page={{ pagination.all_page }}">尾页</a></li>
+            <li class="active"><a>第{{ pagination.cur_page }}页-共{{pagination.all_page }}页</a></li>
+        {% endif %}
+    </ul>
 </nav>
 </body>
 </html>

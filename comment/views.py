@@ -4,7 +4,7 @@ from comment.pageshow import Pagination
 
 def net163(request):
     try:
-        cur_page = int(request.GET.get('cur_page', '1'))
+        cur_page = int(request.GET.get('cur_page', '1'))#跳转页码
     except ValueError:
         cur_page = 1
     pagination = Pagination.create_pagination(
@@ -13,6 +13,6 @@ def net163(request):
             cur_page=cur_page,
             start_page_omit_symbol='...',
             end_page_omit_symbol='...',
-            one_page_data_size=10,#每页显示数目
+            one_page_data_size=30,#每页显示数目
             show_page_item_len=10)#分页数目
     return render(request, 'Net163.html', {'pagination': pagination})

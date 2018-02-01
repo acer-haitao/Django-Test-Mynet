@@ -43,7 +43,8 @@ def DBinsert():
 def sqlitetest(txt,footer):
     cx = sqlite3.connect("D:\Python-Test\StuProject\db.sqlite3")
     cu = cx.cursor()
-    sql = '''insert into 'comment_comment'(txt,'footer') values (\"%s\",\"%s\");'''%(pymysql.escape_string(txt),pymysql.escape_string(footer))#字符串插入字符串sql
+    #sql = '''insert into 'comment_comment'(txt,'footer') values (\"%s\",\"%s\");'''%(pymysql.escape_string(txt),pymysql.escape_string(footer))#字符串插入字符串sql
+    sql = '''insert into 'comment_comment'(txt,'footer') values (\"%s\",\"%s\");''' % (txt, footer)  # 字符串插入字符串sql
     try:
         cu.execute(sql)
         cx.commit()
