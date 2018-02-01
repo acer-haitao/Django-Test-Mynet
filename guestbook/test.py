@@ -23,7 +23,7 @@ def DbSongName(song_id,cursor):
 
 
 def DBinsert():
-    db = pymysql.connect("bdm273925510.my3w.com","bdm273925510","*****","bdm273925510_db",charset='utf8' )
+    db = pymysql.connect("bdm273925510.my3w.com","bdm273925510","haitao131","bdm273925510_db",charset='utf8' )
     cursor = db.cursor()
     sql ='''SELECT * FROM  comment163 WHERE liked  > %s order by liked DESC ; ''' %(1)
     cursor.execute(sql)
@@ -49,8 +49,8 @@ def sqlitetest(txt,footer):
         cx.commit()
     except Exception as e:
         with open("D:\Python-Test\StuProject\dblog.txt",'a+') as f:
-            log = "执行sql发生错误:%s \n 输出:%s"%(e,sql)
-            f.write(log)
+            log = '''执行sql发生错误:%s \n 输出:%s'''%(e,sql)
+            #f.write(log)
         pass
     print(cu)
 DBinsert()
