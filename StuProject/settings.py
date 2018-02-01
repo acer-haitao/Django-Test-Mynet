@@ -25,7 +25,7 @@ SECRET_KEY = 'z4v60mlq#rzgavkwflf8irx6raanuk+h_c&f_iuospn&vhksr1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'StuApp',
     'guestbook',
-    'comment'
+    'comment',
 ]
 
 MIDDLEWARE = [
