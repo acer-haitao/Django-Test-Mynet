@@ -32,12 +32,14 @@
             <li><a href="?cur_page={{ pagination.all_page }}">尾页</a></li>
             <li class="active">
                 <a>第{{ pagination.cur_page }}页-共{{pagination.all_page }}页
-                    <form action="/net163" method="post">
-                        {% csrf_token %}
-                        <input type="number" name="num" value="{{ pagination.cur_page }}">
-                        <input type="submit" value="提交">
-                    </form>
                 </a>
+            </li>
+            <li>
+                <form class="form-inline" action="/net163" method="post">
+                    {% csrf_token %}
+                    <input style="width:80px;" type="number" name="num" value="{{ pagination.cur_page }}">
+                    <input type="submit" value="提交">
+                </form>
             </li>
         {% endif %}
     </ul>
