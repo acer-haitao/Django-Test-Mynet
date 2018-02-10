@@ -8,5 +8,6 @@ from comment import views as netcomment
 from django.conf.urls import url,include
 app_name=['comment']
 urlpatterns = [
+
     url(r'^net163',netcomment.net163(),name='net163'),
 ]
