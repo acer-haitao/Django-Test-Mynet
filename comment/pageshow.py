@@ -63,7 +63,7 @@ class Pagination(object):
                 model_name = model_name,
                 start_pos = start_pos,
                 end_pos = end_pos))
-        objs = eval(find_objs_str)
+        objs = eval(find_objs_str)#eval() 函数可将字符串转换为代码执行，并返回一个或多个值
 
         # 计算总共的页数
         find_objs_count_str = '{model_name}.objects.count()'.format(

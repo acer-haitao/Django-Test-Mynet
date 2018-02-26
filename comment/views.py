@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from comment.pageshow import Pagination
+from comment.pageshow import Pagination#分页
 # Create your views here.
 cur_page = 1
 def net163(request):
@@ -14,6 +14,7 @@ def net163(request):
             print("数据传输有误")
     except ValueError:
         cur_page = 1
+    #自定义分页类
     pagination = Pagination.create_pagination(
             from_name='comment.models',
             model_name='comment',

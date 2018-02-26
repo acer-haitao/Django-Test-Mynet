@@ -6,6 +6,7 @@ class URLDB(models.Model):
     Name =models.CharField(max_length=100)
     URL =models.CharField(max_length=100)
     Time = models.CharField(max_length=100)
+    #在数据库里能显示对应的字段
     def __str__(self):
         tpl = '<URLDB:[Num={Num},Name={Name},URL={URL},Time={Time}]>'
         return tpl.format(Num=self.Num,Name=self.Name,URL=self.URL,Time=self.Time)

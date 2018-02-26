@@ -12,9 +12,9 @@
     <div class="page page-current">
         <!-- 你的html代码 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="http://daydayup11.cn/" data-transition='slide-out'>
+            <a class="button button-link button-nav pull-left" href="/create/" data-transition='slide-out'>
                 <span class="icon icon-left"></span>
-                返回
+                留言
             </a>
             <h1 class="title">我的留言</h1>
         </header>
@@ -23,11 +23,11 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="card">
-                        <div valign="bottom" class="card-header color-white no-border">{{ message.username }}</div>
+                        <div valign="bottom" class="card-header color-white no-border">姓名:{{ message.username }}--标题:{{message.title }}</div>
                         <div class="card-content">
                             <div class="card-content-inner">
+								<p>{{ message.txt }}</p>
                                 <p class="color-gray">发表于{{ message.time|date:'Y-m-d H:i:s' }}</p>
-                                <p>{{ message.txt }}</p>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -44,9 +44,9 @@
             {% endif %}
         </div>
         <nav class="bar bar-tab">
-            <a class="tab-item active" href="/create/">
+            <a class="tab-item active" href="http://daydayup11.cn/">
                 <span class="icon icon-home"></span>
-                <span class="tab-label">留言</span>
+                <span class="tab-label">首页</span>
             </a>
             <a class="tab-item" href="/net163/">
                 <span class="icon icon-me"></span>

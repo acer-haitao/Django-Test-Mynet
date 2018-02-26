@@ -5,9 +5,8 @@
 # @File    : urls.py
 # @Software: PyCharm
 from comment import views as netcomment
-from django.conf.urls import url,include
+from django.conf.urls import url
 app_name=['comment']
 urlpatterns = [
-
     url(r'^net163',netcomment.net163(),name='net163'),
 ]
