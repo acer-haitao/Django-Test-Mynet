@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'StuApp',#网页链接
     'guestbook',#留言
     'comment',#网易评论
+    'job51',
 ]
 
 MIDDLEWARE = [
