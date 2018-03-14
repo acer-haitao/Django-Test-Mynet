@@ -1,8 +1,7 @@
-from bs4 import BeautifulSoup
-import requests
 import time
-import xlwt
-import re
+
+import requests
+from bs4 import BeautifulSoup
 
 
 def gettile(i,url):
@@ -30,4 +29,5 @@ def test():
         utltest = "http://weixin.sogou.com/weixin?oq=&query=%s&page=%s&ie=utf8&p=40040108&dp=1&w=01015002&dr=1"%(tmp,i)
         print(utltest)
         getData(1,utltest)
-test()
+#test()
+

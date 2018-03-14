@@ -5,7 +5,6 @@
 # @File    : pageshow.py
 # @Software: PyCharm
 #自定义分页类
-from django.db.models import Q
 
 class Pagination(object):
     """用于Model字段值的选择"""
@@ -32,7 +31,7 @@ class Pagination(object):
 
         # 查找需要的model数据
         if  form_post:
-            find_objs_str = ('{model_name}.objects.filter(Q(jobname__contains="{form_post3}")|Q(date__contains="{form_post2}")|Q(address__contains="{form_post}")|Q(jobname__contains="{form_post1}"))'
+            find_objs_str = ('{model_name}.objects.filter(Q(wages__contains="{form_post4}")|Q(job__contains="{form_post3}")|Q(date__contains="{form_post2}")|Q(address__contains="{form_post}")|Q(jobname__contains="{form_post1}")).order_by("-date")'
                              '[{start_pos}:{end_pos}]'.format(
                     model_name = model_name,
                     start_pos = start_pos,
@@ -41,6 +40,7 @@ class Pagination(object):
                     form_post1 = form_post,
                     form_post2 = form_post,
                     form_post3 = form_post,
+                    form_post4 = form_post
             )
             )
         else:
@@ -55,8 +55,8 @@ class Pagination(object):
 
         # 计算总共的页数
         if form_post is not None:
-            find_objs_count_str = '{model_name}.objects.filter(Q(jobname__contains="{form_post3}")|Q(date__contains="{form_post2}")|Q(address__contains="{form_post}")|Q(jobname__contains="{form_post1}")).count()'.format(
-                    model_name = model_name,form_post = form_post,form_post1 = form_post,form_post2 = form_post,form_post3 = form_post)
+            find_objs_count_str = '{model_name}.objects.filter(Q(wages__contains="{form_post4}")|Q(job__contains="{form_post3}")|Q(date__contains="{form_post2}")|Q(address__contains="{form_post}")|Q(jobname__contains="{form_post1}")).count()'.format(
+                    model_name = model_name,form_post = form_post,form_post1 = form_post,form_post2 = form_post,form_post3 = form_post,form_post4 = form_post)
             all_obj_counts = eval(find_objs_count_str)
             all_page = all_obj_counts / one_page_data_size
             remain_obj = all_obj_counts % one_page_data_size
