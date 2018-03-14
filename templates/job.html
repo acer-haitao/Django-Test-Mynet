@@ -25,13 +25,10 @@
             <h1 class="title ">
                 <form  action="/job" method="post">
                     {% csrf_token %}
-                    <label class="icon icon-search" for="search"></label>
+                    <label class="icon icon-search" for="search">共{{ pagination.all_page }}页</label>
                     <input type="search" id='search' name="key" placeholder='输入名称...'/>
                 </form>
             </h1>
-
-
-
             <a class="button button-link button-nav pull-right" href="?cur_page={{ pagination.next_page }}" data-transition='slide-out'>
                 下一页
                 <span class="icon icon-right" ></span>

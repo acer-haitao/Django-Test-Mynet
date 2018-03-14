@@ -5,6 +5,8 @@
 # @File    : pageshow.py
 # @Software: PyCharm
 #自定义分页类
+from django.db.models import Q
+
 class Pagination(object):
     """用于Model字段值的选择"""
     def __init__(self):
@@ -13,37 +15,8 @@ class Pagination(object):
     def create_pagination(self, from_name='', model_name='',
                           cur_page=1, start_page_omit_symbol = '...',
                           end_page_omit_symbol = '...', one_page_data_size=10,
-                          show_page_item_len=9,form_post = ''):
-        """通过给的model和分页参数对相关model进行分页
-        Args:
-            from_name: 导入模块的 from后面的参数
-                from {from_name} import model_name
-            mode_name: 需要导入的模块名
-                from from_name import {model_name}
-            cur_page: 当前显示的是第几页
-            start_page_omit_symbol: 超出的页数使用怎么样的省略号(前)
-                ... 2 3 4
-            end_page_omit_symbol: 超出的页数使用怎么样的省略号(后)
-                1 2 3 4 ...
-            one_page_data_size: 每一页显示几行
-            show_page_item_len: 显示几个能点击的页数
-        Return:
-            pagination: dict
-                    pagination = {
-                        'objs': objs, # 需要显示model数据
-                        'all_obj_counts': all_obj_counts, # 一共多少行数据
-                        'start_pos': start_pos, # 数据分页开始的数据
-                        'end_pos': end_pos, # 数据分页结束的数据
-                        'all_page': all_page, # 一共有多少页
-                        'cur_page': cur_page, # 当前的页码
-                        'pre_page': pre_page, # 上一页的页码
-                        'next_page': next_page, # 下一页的页码
-                        'page_items': page_items, 能点击的页数
-                        'start_page_omit_symbol': start_page_omit_symbol, # 开始的省略号
-                        'end_page_omit_symbol': end_page_omit_symbol, # 结束的省略号
-                    }
-        Raise: None
-        """
+                          show_page_item_len=9,form_post = 'python'):
+
         # 如果没有输入导入模块需要的相关信息直接退出
         if not from_name or not model_name:
             return None
@@ -58,13 +31,17 @@ class Pagination(object):
         end_pos = start_pos + one_page_data_size
 
         # 查找需要的model数据
-        if form_post is not None:
-            find_objs_str = ('{model_name}.objects.filter(jobname__contains="{form_post}")'
+        if  form_post:
+            find_objs_str = ('{model_name}.objects.filter(Q(jobname__contains="{form_post3}")|Q(date__contains="{form_post2}")|Q(address__contains="{form_post}")|Q(jobname__contains="{form_post1}"))'
                              '[{start_pos}:{end_pos}]'.format(
                     model_name = model_name,
                     start_pos = start_pos,
                     end_pos = end_pos,
-                    form_post = form_post)
+                    form_post = form_post,
+                    form_post1 = form_post,
+                    form_post2 = form_post,
+                    form_post3 = form_post,
+            )
             )
         else:
             find_objs_str = ('{model_name}.objects.all()'
@@ -78,8 +55,8 @@ class Pagination(object):
 
         # 计算总共的页数
         if form_post is not None:
-            find_objs_count_str = '{model_name}.objects.filter(jobname__contains="{form_post}").count()'.format(
-                    model_name = model_name,form_post = form_post)
+            find_objs_count_str = '{model_name}.objects.filter(Q(jobname__contains="{form_post3}")|Q(date__contains="{form_post2}")|Q(address__contains="{form_post}")|Q(jobname__contains="{form_post1}")).count()'.format(
+                    model_name = model_name,form_post = form_post,form_post1 = form_post,form_post2 = form_post,form_post3 = form_post)
             all_obj_counts = eval(find_objs_count_str)
             all_page = all_obj_counts / one_page_data_size
             remain_obj = all_obj_counts % one_page_data_size
