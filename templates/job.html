@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>我的生活</title>
+    <title>51job</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,17 +17,27 @@
 <div class="page-group">
     <div class="page page-current">
         <!-- 你的html代码 -->
+        <div class="bar bar-header-secondary">
+
+            <div class="searchbar">
+                <a class="searchbar-cancel">取消</a>
+                <div class="search-input">
+                    <form  action="/job" method="post">
+                        {% csrf_token %}
+                        <label class="icon icon-search" for="search"></label>
+                        <input type="search" id='search' name="key" placeholder='输入地点、日期、职称名称......'/>
+                    </form>
+                </div>
+            </div>
+
+        </div>
         <header class="bar bar-nav">
             <a class="button button-link button-nav pull-left " href="?cur_page={{ pagination.pre_page }}" data-transition='slide-out'>
                 <span class="icon icon-left" ></span>
-                上一页
+                <span class="tab-label">上一页</span>
             </a>
             <h1 class="title ">
-                <form  action="/job" method="post">
-                    {% csrf_token %}
-                    <label class="icon icon-search" for="search">共{{ pagination.all_page }}页</label>
-                    <input type="search" id='search' name="key" placeholder='输入名称...'/>
-                </form>
+                测试--第{{ pagination.cur_page }}页 共{{ pagination.all_page }}页
             </h1>
             <a class="button button-link button-nav pull-right" href="?cur_page={{ pagination.next_page }}" data-transition='slide-out'>
                 下一页
@@ -36,45 +46,52 @@
         </header>
         <div class="content">
             <div class="content-block">
-                <div class="tabs">
-                    <div id="tab1" class="tab active">
-                        <div class="content-block">
-                            <!--邮件列表格式-->
-                            {% for data in pagination.objs %}
-                                <div class="list-block media-list">
-                                    <ul>
-                                        <li><!--跳转新的标签页打开-->
-                                            <a  href="javascript:void(0);" onclick="window.open('{{ data.joburl }}','_blank');" target="_blank" data-transition='slide-out' class="item-link item-content">
-                                                <div class="item-inner">
-                                                    <div class="item-title-row">
-                                                        <div class="item-title">{{ data.job }}</div>
-                                                        <div class="item-after">{{ data.date }}</div>
-                                                    </div>
-                                                    <div class="item-subtitle">地点:{{data.address }} 工资:{{ data.wages }}</div>
-                                                    <div class="item-subtitle">{{ data.company }}</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            {% endfor %}
+                <div class="content-block">
+                    <!--邮件列表格式-->
+                    {% for data in pagination.objs %}
+                        <div class="list-block media-list">
+                            <ul>
+                                <li><!--跳转新的标签页打开-->
+                                    <a  href="javascript:void(0);" onclick="window.open('{{ data.joburl }}','_blank');" target="_blank" data-transition='slide-out' class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">{{ data.job }}</div>
+                                                <div class="item-after">{{ data.date }}</div>
+                                            </div>
+                                            <div class="item-subtitle">地点:{{data.address }} 工资:{{ data.wages }}</div>
+                                            <div class="item-subtitle">{{ data.company }}</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <nav class="bar bar-tab">
-            <a class="tab-item external active" href="?cur_page=1">首页</a>
+            <a class="tab-item external active" href="?cur_page=1">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
             {% for page_item in pagination.page_items %}
                 {% if page_item == pagination.cur_page %}
-                    <a  class="tab-item external active" href="?cur_page={{ page_item }}">{{ page_item }}</a>
+                    <a  class="tab-item external active" href="?cur_page={{ page_item }}">
+                        <span class="icon icon-star"></span>
+                        <span class="tab-label">{{ page_item }}</span>
+                    </a>
                 {% else %}
-                    <a class="tab-item external active" href="?cur_page={{ page_item }}">{{ page_item }}</a>
+                    <a class="tab-item external active" href="?cur_page={{ page_item }}">
+                        <span class="icon icon-star"></span>
+                        <span class="tab-label">{{ page_item }}</span>
+                    </a>
                 {% endif %}
             {% endfor%}
-            <a class="tab-item external active" href="?cur_page={{ pagination.all_page }}">尾页</a>
+            <a class="tab-item external active" href="?cur_page={{ pagination.all_page }}">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">尾页</span>
+            </a>
         </nav>
-
     </div>
 </div>
 
