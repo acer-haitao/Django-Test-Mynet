@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 #from django.urls import path
 from django.conf.urls import url,include
@@ -16,5 +15,6 @@ urlpatterns = [
     url('^comment/',guest_views.comment),
     url(r'^net163', net163_views.net163),
     url(r'^job',job_views.job),
+    url(r'^search',include('haystack.urls')),
     url(r'', ht_index.index, name='index'),
 ]

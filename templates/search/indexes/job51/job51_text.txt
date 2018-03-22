@@ -1,0 +1,8 @@
+{{object.job}}
+{{object.jobname}}
+{{object.company}}
+{{object.address}}
+{{object.wages}}
+{{object.date}}
+{{object.joburl}}
+

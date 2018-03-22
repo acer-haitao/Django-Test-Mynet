@@ -41,7 +41,18 @@ INSTALLED_APPS = [
     'guestbook',#留言
     'comment',#网易评论
     'job51',
+    'haystack',#搜索
 ]
+###########搜索#################
+HAYSTACK_CONNECTIONS = {
+    'default': {
+'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+},
+}
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 100
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+#############搜索###############
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

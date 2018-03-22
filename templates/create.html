@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
+
 <div class="page-group">
     <div class="page page-current">
         <!-- 你的html代码 -->
@@ -23,6 +24,7 @@
         <!-- 我是注释 -->
  <div class="content">
     <!-- 这里是页面内容区 -->
+
       <!--method: POST /GET -->
         <form action="/save/" method="POST" novalidate="novalidate">
             {% csrf_token %}
@@ -31,7 +33,7 @@
                 <label>标  题:</label> <input type="text" name="title" value="标题" /><br /><br />
                 <label>内  容:</label> <textarea name="content" placeholder="内容" style="width:600px;height:350px;"> </textarea><br /><br />
             </table>
-            <input class="btn btn-success button button-big" type="submit" value="留言"/>
+            <input class="btn btn-success button " type="submit" value="留言"/>
         </form>
   </div>
 
