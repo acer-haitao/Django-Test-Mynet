@@ -8,7 +8,11 @@
     <title>Bootstrap 101 Template</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <style>
+        span.highlighted {
+            color: red;
+        }
+    </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,7 +22,7 @@
     <![endif]-->
 </head>
 <body>
-
+{% load highlight %}
 <div class="row">
     <div class="col-md-100">
         <table class="table table-bordered">
@@ -36,8 +40,8 @@
             {% if query %}
                 {% for result in page.object_list %}
                     <tr>
-                        <td>{{ result.object.job }}</td>
-                        <td> {{ result.object.jobname }}</td>
+                        <td>{% highlight result.object.job with query max_length 40 %} </td>
+                        <td> {% highlight result.object.jobname with query max_length 40 %}</td>
                         <td> {{ result.object.company}}</td>
                         <td>{{ result.object.joburl}}</td>
                         <td>{{ result.object.wages}}</td>
