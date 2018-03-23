@@ -50,7 +50,7 @@ HAYSTACK_CONNECTIONS = {
 'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
 },
 }
-HAYSTACK_SEARCH_RESULTS_PER_PAGE = 100
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 #############搜索###############
 

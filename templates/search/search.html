@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -17,35 +16,60 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <div class="table-responsive">
-{% for result in page.object_list %}
-    <table class="table  table-bordered">
-        <tr>
-            <td class="active">
-                {{ result.object.job }}
-            </td>
-            <td class="active">
-                {{ result.object.jobname }}
-            </td>
-             <td class="active">
-               {{ result.object.company}}
-            </td>
-            <td class="active">
-              {{ result.object.joburl}}
-            </td>
-        </tr>
+</head>
+<body>
 
-    </table>
-{% endfor %}
+<div class="row">
+    <div class="col-md-100">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>#First Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Username</th>
+                <th>Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if query %}
+                {% for result in page.object_list %}
+                    <tr>
+                        <td>{{ result.object.job }}</td>
+                        <td> {{ result.object.jobname }}</td>
+                        <td> {{ result.object.company}}</td>
+                        <td>{{ result.object.joburl}}</td>
+                        <td>{{ result.object.wages}}</td>
+                        <td>{{ result.object.date}}</td>
+                    </tr>
+                {% empty %}
+                    <div class="no-post">没有搜索到你想要的结果！</div>
+                {% endfor %}
+                {% if page.has_previous or page.has_next %}
+                    <div >
+                        {% if page.has_previous %}
+                            <a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; 上一页
+                        {% if page.has_previous %}</a>{% endif %}
+                        |
+                        {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}下一页
+                        &raquo;{% if page.has_next %}</a>{% endif %}
+                    </div>
+                {% endif %}
+            {% else %}
+                请输入搜索关键词，例如 django
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
 
 
