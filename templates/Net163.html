@@ -6,6 +6,8 @@
     <title>网易云评论测试</title>
 </head>
 <body>
+{% extends "suibase.html" %}
+{% block content %}
 <nav aria-label="Page navigation">
     <ul class="pager pagination-lg">
         {% if pagination.cur_page != 1 %}
@@ -98,5 +100,6 @@
         {% endif %}
     </ul>
 </nav>
+{% endblock content %}
 </body>
 </html>
