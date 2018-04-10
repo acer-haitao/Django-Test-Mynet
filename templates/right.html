@@ -1,3 +1,5 @@
+{%  extends 'suibase.html'%}
+{% block content %}
 {% load staticfiles %}
 <!doctype html>
 <html lang="en">
@@ -14,24 +16,9 @@
 <body>
 <!-- 顶部导航栏开始 -->
 
-<form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
-    <input  class="btn btn-success button form-control " type="search" name="q" placeholder="搜索" required>
-</form>
 
-<div id="nav-top">
-    <ul>
-        <li><a target="_blank" href="http://weibo.com/xin20yan/home?leftnav=1">新浪微博</a></li>
-        <li><a target="_blank" href="http://www.3bsou.com/">三百搜索</a></li>
-        <li><a target="_blank" href="http://guge.suanfazu.com/">谷歌</a></li>
-        <li><a target="_blank" href="https://github.com/">Github</a></li>
-        <li><a target="_blank" href="/net163/">网易评论</a></li>
-        <li><a href="/comment/">留言</a></li>
-    </ul>
-</div>
 <!-- 顶部导航栏结束 -->
-<br>
-<br>
-<div style="border-bottom:5px solid #000"></div>
+
 <!-- logo和搜索开始 -->
 
 <!-- 导航标签页开始 -->
@@ -92,5 +79,6 @@ function showPage(tabId){
 }
 </script>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261128615'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol +	"s11.cnzz.com/z_stat.php%3Fid%3D1261128615%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+{% endblock content %}
 </body>
 </html>

@@ -3,38 +3,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <title>新建待办事项</title>
-  <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
-  <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>新建待办事项</title>
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
 </head>
 
 <body>
 <div class="sui-navbar">
-  <div class="navbar-inner"><a href="#" class="sui-brand">SUI</a>
-    <ul class="sui-nav">
-      <li class="active"><a href="#">首页</a></li>
-      <li><a href="#">组件</a></li>
-      <li class="sui-dropdown"><a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">其他 <i class="caret"></i></a>
-        <ul role="menu" class="sui-dropdown-menu">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">关于</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">项目组成员</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">版权</a></li>
+    <div class="navbar-inner"><a href="#" class="sui-brand">SUI</a>
+        <ul class="sui-nav">
+            <li class="active"><a href="/index">首页</a></li>
+            <li><a href="/net163">网易评论</a></li>
+            <li><a href="/job">job51</a></li>
         </ul>
-      </li>
-    </ul>
-    <form class="sui-form sui-form pull-left">
-      <input placeholder="宝贝/店铺名称..." type="text">
-      <button class="sui-btn">搜索</button>
-    </form>
-    <ul class="sui-nav pull-right">
-      <li><a href="#">个人中心</a></li>
-      <li><a href="#">帮助</a></li>
-    </ul>
-  </div>
+        <form class="sui-form sui-form pull-left" action="{% url 'haystack_search' %}">
+            <input  name="q" placeholder="请输入搜索内容..." type="text">
+            <button class="sui-btn">搜索</button>
+        </form>
+        <ul class="sui-nav pull-right">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="/comment/">留言</a></li>
+        </ul>
+    </div>
 </div>
 {% block content %}
 

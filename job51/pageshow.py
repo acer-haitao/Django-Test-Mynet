@@ -5,6 +5,7 @@
 # @File    : pageshow.py
 # @Software: PyCharm
 #自定义分页类
+from django.db.models import Q
 class Pagination(object):
     """用于Model字段值的选择"""
     def __init__(self):

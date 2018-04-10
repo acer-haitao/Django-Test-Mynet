@@ -28,22 +28,22 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>#First Name</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-                <th>Username</th>
-                <th>Username</th>
+                <th>&#12288&#12288职称</th>
+                <th>地点</th>
+                <th>公司</th>
+                <th>链接</th>
+                <th>薪资</th>
+                <th>日期</th>
             </tr>
             </thead>
             <tbody>
             {% if query %}
                 {% for result in page.object_list %}
                     <tr>
-                        <td>{% highlight result.object.job with query max_length 40 %} </td>
-                        <td> {% highlight result.object.jobname with query max_length 40 %}</td>
+                        <td>&#12288&#12288{% highlight result.object.job with query max_length 40 %} </td>
+                        <td> {% highlight result.object.address with query max_length 40 %}</td>
                         <td> {{ result.object.company}}</td>
-                        <td>{{ result.object.joburl}}</td>
+                        <td onclick="window.open('{{ result.object.joburl}}')">{{ result.object.joburl}}</td>
                         <td>{{ result.object.wages}}</td>
                         <td>{{ result.object.date}}</td>
                     </tr>

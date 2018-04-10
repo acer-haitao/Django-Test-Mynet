@@ -5,7 +5,6 @@
 # @File    : search_indexes.py
 # @Software: PyCharm
 from haystack import indexes
-
 from .models import job51
 
 

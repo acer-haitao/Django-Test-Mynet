@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'comment',#网易评论
     'job51',
     'haystack',#搜索
+    'echartapp',
 ]
 ###########搜索#################
 HAYSTACK_CONNECTIONS = {
