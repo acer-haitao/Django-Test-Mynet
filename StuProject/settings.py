@@ -37,12 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'StuApp',#网页链接
-    'guestbook',#留言
-    'comment',#网易评论
-    'job51',
+    'apps.StuApp',#网页链接
+    'apps.guestbook',#留言
+    'apps.comment',#网易评论
+    'apps.job51',
     'haystack',#搜索
-    'echartapp',
+    'apps.echartapp',
+    'apps.app01',
 ]
 ###########搜索#################
 HAYSTACK_CONNECTIONS = {

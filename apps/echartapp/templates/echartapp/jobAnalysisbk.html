@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入 ECharts 文件 使用 static 关键字-->
+    <script src="{% static 'echartapp/js/echarts.js' %}"></script>
+    <title>51job职位分析</title>
+</head>
+<body>
+<div id="main" style="width:1337px;height:623px;"></div>
+<script>
+    var jobcount = {{ jobcount|safe }}
+    var address = {{ address|safe}}
+    var address_count={{ address_count|safe }}
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+    title : {
+        text: '武汉技术支持区域及岗位数',
+        subtext: '岗位共计:'+jobcount
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['蒸发量','降水量']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data :address,
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'岗位数',
+            type:'bar',
+            data:address_count,
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+        }
+    ]
+};
+      // 使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+</body>
+</html>

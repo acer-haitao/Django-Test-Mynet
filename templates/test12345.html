@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+     <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <!-- or -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+</head>
+<body>
+<h1 id="animated" class="animated flipInY">Example</h1>
+<button onclick="display()">显示日期</button>
+<button onclick="alert('fhadkah')">点我</button>
+<img id="myimg" onclick="test()" src="http://www.runoob.com/images/pic_bulboff.gif">
+
+<script>
+    function display(){
+        document.getElementById("animated").innerHTML = Date();
+    };
+    document.write("<h1>这是一个标题</h1>");
+    document.write("<p>这是一个段落。</p>");
+    function test(){
+        img = docunment.getElementById("myimg");
+        if(img.src.match("bulbon")){
+            img.src = "http://www.runoob.com/images/pic_bulbon.gif";
+        }else {
+            img.src = "http://www.runoob.com/images/pic_bulboff.gif";
+        }
+    };
+</script>
+<script>
+function changeImage()
+{
+	element=document.getElementById('myimage')
+	if (element.src.match("bulbon"))
+ 	{
+  		element.src="http://www.runoob.com/images/pic_bulbon.gif";
+  	}
+	else
+   {
+  		element.src="http://www.runoob.com/images/pic_bulboff.gif";
+   }
+}
+</script>
+<img id="myimage" onclick="changeImage()"
+src="http://www.runoob.com/images/pic_bulboff.gif" width="100" height="180">
+<p>点击灯泡就可以打开或关闭这盏灯</p>
+
+</body>
+</html>

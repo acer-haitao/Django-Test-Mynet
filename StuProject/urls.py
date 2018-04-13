@@ -1,12 +1,12 @@
 from django.contrib import admin
 #from django.urls import path
 from django.conf.urls import url,include
-from job51 import views as job_views
-from StuApp import views as ht_index
-from guestbook import views as guest_views
-from comment import views as net163_views
-from echartapp import views
-
+from apps.job51 import views as job_views
+from apps.StuApp import views as ht_index
+from apps.guestbook import views as guest_views
+from apps.comment import views as net163_views
+from apps.echartapp import views
+from apps.app01 import views as app01views
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^deleteid',guest_views.deleteid),
@@ -29,5 +29,7 @@ urlpatterns = [
     # 饼状图
     url(r'^piechart/$', views.piechart, name='piechart'),
     url(r'^index1/$', ht_index.index1, name='index1'),
+    url(r'^article/',app01views.arcticle,name='article'),
+    url(r'^Analysis/',views.jobAnalysis,name='Analysis'),
     url(r'', ht_index.index, name='index'),
 ]

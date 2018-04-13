@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入 ECharts 文件 使用 static 关键字-->
+    <script src="{% static 'echartapp/js/echarts.js' %}"></script>
+    <title>51job职位分析</title>
+</head>
+<body>
+<div id="main" style="width:1337px;height:623px;"></div>
+<script>
+    var jobcount = {{ jobcount|safe }}
+    var address = {{ address|safe}}
+    var address_count={{ address_count|safe }}
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+        title: {
+            text: 'Step Line'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['武汉', 'Step Middle', 'Step End']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {},
+                dataView : {show: true, readOnly: false},
+		    magicType : {show: true, type: ['line', 'bar']},
+		    restore : {show: true},
+            }
+        },
+        xAxis: {
+            type: 'category',
+            data: address
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'武汉',
+                type:'line',
+                step: 'start',
+                data:address_count
+            },
+            {
+                name:'Step Middle',
+                type:'line',
+                step: 'middle',
+                data:[220, 282, 201, 234, 290, 430, 410]
+            },
+            {
+                name:'Step End',
+                type:'line',
+                step: 'end',
+                data:[450, 432, 401, 454, 590, 530, 510]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+</body>
+</html>
