@@ -10,8 +10,8 @@
 <body>
 <div id="main" style="width:1337px;height:623px;"></div>
 <script>
-    var jobcount = {{ jobcount|safe }}
-    var address = {{ address|safe}}
+    var jobcount =; {{ jobcount|safe }}
+    var address =; {{ address|safe}}
     var address_count={{ address_count|safe }}
     var myChart = echarts.init(document.getElementById('main'));
     option = {

@@ -3,41 +3,111 @@ from __future__ import unicode_literals
 
 import json
 import math
+
 import MySQLdb
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.template import loader
 from pyecharts import Line3D
 from pyecharts.constants import DEFAULT_HOST
 # 将数据库数据在Web页面展示
 from .models import PageViewStatistics
 from apps.job51.models import job51
-def jobAnalysis(request):
-    #职位总数
-    job_count = job51.objects.filter(jobname='WHJSZC').count()
-    #区域列表
-    job_adresss = job51.objects.values_list('address',flat=True)
-    print(type(job_adresss))
-    hist ={}
+
+def jobWages(jobnamestr):
+    # 职位总数
+    job_count = job51.objects.filter(jobname=jobnamestr).count()
+    # 根据岗位和工资筛选
+    job_wages = job51.objects.filter(jobname=jobnamestr).values_list('wages', flat=True)
+    hist = {}
+    for word in job_wages:
+        if word not in hist:  # 生成列表并统计个数
+            hist[word] = 1
+        else:
+            hist[word] = hist[word] + 1
+    # 字典排序
+    hist_sort = sorted(hist.items(), key=lambda x: x[1], reverse=True)
+    # 将key和value分开
+    hist_wages = []
+    hist_wages_count = []
+    for k, v in hist_sort:
+        hist_wages.append(k)
+        hist_wages_count.append(v)
+    data = [job_count, hist_wages, hist_wages_count]
+    return data
+
+
+def jobAddress(jobnamestr):
+    # 职位总数
+    job_count = job51.objects.filter(jobname=jobnamestr).count()
+    # 区域列表
+    job_adresss = job51.objects.filter(jobname=jobnamestr).values_list('address', flat=True)
+    hist = {}
     for word in job_adresss:
         if word not in hist:  # 生成列表并统计个数
             hist[word] = 1
         else:
             hist[word] = hist[word] + 1
-    #字典排序
+    # 字典排序
     hist_sort = sorted(hist.items(), key=lambda x: x[1], reverse=True)
-    #将key和value分开
+    # 将key和value分开
     hist_address = []
     hist_address_count = []
-    print(hist_sort)
-    for k,v in hist_sort:
+    for k, v in hist_sort:
         hist_address.append(k)
         hist_address_count.append(v)
+    data =[job_count,hist_address,hist_address_count]
+    return data
+
+def getkv_dict(jobnamestr):
+    # 职位总数
+    job_count = job51.objects.filter(jobname=jobnamestr).count()
+    # 区域列表
+    job_adresss = job51.objects.filter(jobname=jobnamestr).values_list('address', flat=True)
+    hist = {}
+    for word in job_adresss:
+        if word not in hist:  # 生成列表并统计个数
+            hist[word] = 1
+        else:
+            hist[word] = hist[word] + 1
+    # 字典排序
+    hist_sort = sorted(hist.items(), key=lambda x: x[1], reverse=True)
+    # 将key和value分开
+    data =[]
+    for k, v in hist_sort:
+        tmp={'name':k,'value':v}
+        data.append(tmp)
+    return data
+
+def jobAnalysis(request):
+    data_wage_bj = jobWages("BJJSZC")
+    data_wage_wh = jobWages("WHJSZC")
+
+    data = jobAddress("WHJSZC")
+    data_bj = jobAddress("BJJSZC")
+
+    data_pie_wh = getkv_dict("WHJSZC")
+    data_pie_bj = getkv_dict("BJJSZC")
+
     return render(request,'echartapp/jobAnalysis.html',
                   {
-                      'jobcount':job_count,
-                      'address':hist_address,
-                      'address_count':hist_address_count,
+                      'jobcount':data[0],
+                      'address':data[1],
+                      'address_count':data[2],
+
+                      'jobcount_bj':data_bj[0],
+                      'address_bj':data_bj[1],
+                      'address_count_bj':data_bj[2],
+
+                      'pie_wh':data_pie_wh,
+                      'pie_bj':data_pie_bj,
+
+                      'wage_count_wh':data_wage_wh[0],
+                      'wage_name_wh':data_wage_wh[1],
+                      'wage_wh':data_wage_wh[2],
+
+                      'wage_count_bj': data_wage_bj[0],
+                      'wage_name_bj': data_wage_bj[1],
+                      'wage_bj': data_wage_bj[2],
                   }
                   )
 

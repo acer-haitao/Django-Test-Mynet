@@ -5,70 +5,77 @@
     <meta charset="UTF-8">
     <!-- 引入 ECharts 文件 使用 static 关键字-->
     <script src="{% static 'echartapp/js/echarts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_address_line_wh.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_address_line_bj.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_address_pi_wh.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_address_pi_bj.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_wage_line_wh.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_wage_line_bj.js' %}"></script>
     <title>51job职位分析</title>
 </head>
 <body>
-<div id="main" style="width:1337px;height:623px;"></div>
-<script>
-    var jobcount = {{ jobcount|safe }}
-    var address = {{ address|safe}}
-    var address_count={{ address_count|safe }}
-    var myChart = echarts.init(document.getElementById('main'));
-    var option = {
-        title: {
-            text: 'Step Line'
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            data:['武汉', 'Step Middle', 'Step End']
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        toolbox: {
-            feature: {
-                saveAsImage: {},
-                dataView : {show: true, readOnly: false},
-		    magicType : {show: true, type: ['line', 'bar']},
-		    restore : {show: true},
-            }
-        },
-        xAxis: {
-            type: 'category',
-            data: address
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                name:'武汉',
-                type:'line',
-                step: 'start',
-                data:address_count
-            },
-            {
-                name:'Step Middle',
-                type:'line',
-                step: 'middle',
-                data:[220, 282, 201, 234, 290, 430, 410]
-            },
-            {
-                name:'Step End',
-                type:'line',
-                step: 'end',
-                data:[450, 432, 401, 454, 590, 530, 510]
-            }
-        ]
-    };
 
-    // 使用刚指定的配置项和数据显示图表
-    myChart.setOption(option);
+<div id="main1" style="width:1280px;height:850px;"></div>
+<div id="main2" style="width:1280px;height:850px;"></div>
+<div id="main3" style="width:1280px;height:850px;"></div>
+<div id="main6" style="width:1280px;height:850px;"></div>
+<div id="main4" style="width:1280px;height:850px;"></div>
+<div id="main5" style="width:1280px;height:850px;"></div>
+
+
+<script type="text/javascript">
+    //1
+    var address =;; {{ address|safe}}
+    var jobcount =;; {{ jobcount|safe }}
+    var address_count ={{ address_count|safe }}
+    //2
+    var jobcount_bj = {{ jobcount_bj|safe }};
+    var address_bj = {{ address_bj|safe}};
+    var address_count_bj={{ address_count_bj|safe }};
+    //3
+    var pie_wh={{pie_wh|safe }};
+    //4
+    var pie_bj={{pie_bj|safe }};
+    //5
+    var wage_count_wh ={{ wage_count_wh|safe }};
+    var wage_name_wh ={{ wage_name_wh|safe}};
+    var wage_wh={{wage_wh|safe }};
+    //6
+    var wage_count_bj ={{ wage_count_bj|safe }};
+    var wage_name_bj ={{ wage_name_bj|safe}};
+    var wage_bj={{wage_bj|safe }};
+
+    window.onload=function(){
+        //5
+        var jszc_address_funwh = jszc_address_line;
+        jszc_address_funwh(jobcount,address,address_count);
+        //4
+        var jszc_address_funbj = jszc_address_line_bj;
+        jszc_address_funbj(jobcount_bj,address_bj,address_count_bj);
+        //1
+        var jszc_address_pi_funwh = jszc_address_pi_wh;
+        jszc_address_pi_funwh(pie_wh,jobcount,address);
+        //2
+        var jszc_address_pi_funbj =jszc_address_pi_bj;
+        jszc_address_pi_funbj(pie_bj,jobcount_bj,address_bj);
+        //3
+        var jszc_wage_line_funwh = jszc_wage_line_wh;
+        jszc_wage_line_funwh(wage_name_wh,wage_wh,jobcount);
+        //6
+        var jszc_wage_line_funbj = jszc_wage_line_bj;
+        jszc_wage_line_funbj(wage_name_bj,wage_bj,jobcount_bj);
+    };
 </script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

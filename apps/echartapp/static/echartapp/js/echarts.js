@@ -9626,7 +9626,7 @@ function clientToLocal(el, e, out, calculate) {
         defaultGetZrXY(el, e, out);
     }
     // Caution: In FireFox, layerX/layerY Mouse position relative to the closest positioned
-    // ancestor element, so we should make sure el is positioned (e.g., not position:static).
+    // ancestor element, so we should make sure el is positioned (e.g., not position:img).
     // BTW1, Webkit don't return the same results as FF in non-simple cases (like add
     // zoom-factor, overflow / opacity layers, transforms ...)
     // BTW2, (ev.offsetY || ev.pageY - $(ev.target).offset().top) is not correct in preserve-3d.
@@ -12977,7 +12977,7 @@ PathProxy.prototype = {
 
     /**
      * 转成静态的 Float32Array 减少堆内存占用
-     * Convert dynamic array to static Float32Array
+     * Convert dynamic array to img Float32Array
      */
     toStatic: function () {
         var data = this.data;
@@ -14804,7 +14804,7 @@ var fixClipWithShadow = function (orignalBrush) {
                         || (type === 'rect' && (!shape.width || !shape.height))
                     )) {
                         for (var j = 0; j < shadowTemp.length; j++) {
-                            // It is save to put shadowTemp static, because shadowTemp
+                            // It is save to put shadowTemp img, because shadowTemp
                             // will be all modified each item brush called.
                             shadowTemp[j][2] = style[shadowTemp[j][0]];
                             style[shadowTemp[j][0]] = shadowTemp[j][1];
@@ -34532,7 +34532,7 @@ var builders = {
 
 /**
  * @public
- * @static
+ * @img
  * @param {Object} opt
  * @param {number} axisRotation in radian
  * @param {number} textRotation in radian
@@ -34699,7 +34699,7 @@ function isNameLocationCenter(nameLocation) {
 }
 
 /**
- * @static
+ * @img
  */
 var ifIgnoreOnTick$1 = AxisBuilder.ifIgnoreOnTick = function (
     axis,
@@ -34730,7 +34730,7 @@ var ifIgnoreOnTick$1 = AxisBuilder.ifIgnoreOnTick = function (
 };
 
 /**
- * @static
+ * @img
  */
 var getInterval$1 = AxisBuilder.getInterval = function (model, labelInterval) {
     var interval = model.get('interval');
