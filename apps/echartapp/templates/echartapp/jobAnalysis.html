@@ -11,12 +11,16 @@
     <script type="text/javascript" src="{% static 'echartapp/js/jszc_address_pi_bj.js' %}"></script>
     <script type="text/javascript" src="{% static 'echartapp/js/jszc_wage_line_wh.js' %}"></script>
     <script type="text/javascript" src="{% static 'echartapp/js/jszc_wage_line_bj.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_wage_pi_wh.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/jszc_wage_pi_bj.js' %}"></script>
     <title>51job职位分析</title>
 </head>
 <body>
 
 <div id="main1" style="width:1280px;height:850px;"></div>
 <div id="main2" style="width:1280px;height:850px;"></div>
+<div id="main7" style="width:1280px;height:850px;"></div>
+<div id="main8" style="width:1280px;height:850px;"></div>
 <div id="main3" style="width:1280px;height:850px;"></div>
 <div id="main6" style="width:1280px;height:850px;"></div>
 <div id="main4" style="width:1280px;height:850px;"></div>
@@ -25,9 +29,9 @@
 
 <script type="text/javascript">
     //1
-    var address =;; {{ address|safe}}
-    var jobcount =;; {{ jobcount|safe }}
-    var address_count ={{ address_count|safe }}
+    var address ={{ address|safe}};
+    var jobcount ={{ jobcount|safe }};
+    var address_count ={{ address_count|safe }};
     //2
     var jobcount_bj = {{ jobcount_bj|safe }};
     var address_bj = {{ address_bj|safe}};
@@ -40,10 +44,16 @@
     var wage_count_wh ={{ wage_count_wh|safe }};
     var wage_name_wh ={{ wage_name_wh|safe}};
     var wage_wh={{wage_wh|safe }};
-    //6
+    //6 北京地区饼图
     var wage_count_bj ={{ wage_count_bj|safe }};
     var wage_name_bj ={{ wage_name_bj|safe}};
     var wage_bj={{wage_bj|safe }};
+    //7 武汉工资饼图
+    var pie_wage_wh = {{ pie_wh_wage|safe }};
+    var pie_wh_wagename ={{ pie_wh_wagename|safe }};
+    //8 北京工资分布
+    var pie_wage_bj = {{ pie_bj_wage|safe }};
+    var pie_bj_wagename ={{ pie_bj_wagename|safe }};
 
     window.onload=function(){
         //5
@@ -64,18 +74,11 @@
         //6
         var jszc_wage_line_funbj = jszc_wage_line_bj;
         jszc_wage_line_funbj(wage_name_bj,wage_bj,jobcount_bj);
+        //7 武汉薪资分布饼图
+        var jszc_wage_pi_funwh = jszc_wage_pi_wh(pie_wage_wh,jobcount,pie_wh_wagename);
+        //8 北京薪资分布饼图
+        var jszc_wage_pi_funbj = jszc_wage_pi_bj(pie_wage_bj,jobcount_bj,pie_bj_wagename);
     };
 </script>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

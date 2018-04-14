@@ -58,7 +58,44 @@ def jobAddress(jobnamestr):
     data =[job_count,hist_address,hist_address_count]
     return data
 
+def getkv_dict_all(jobnamestr,sqlchoice):
+    """
+    :param jobnamestr:职位名称--python、C#、java
+    :param sqlchocie: 数据库筛选字段比如工资、地点、日期、公司
+    :return:构造成[{'name': '武汉', 'value': 2513}, {'name': '武汉-洪山区', 'value': 1531}...]
+    """
+    # 职位总数
+    job_count = job51.objects.filter(jobname=jobnamestr).count()
+    # 区域列表
+    job_adresss = job51.objects.filter(jobname=jobnamestr).values_list(sqlchoice, flat=True)
+
+    hist = {}
+    for word in job_adresss:
+        if word not in hist:  # 生成列表并统计个数
+            hist[word] = 1
+        else:
+            hist[word] = hist[word] + 1
+    # 字典排序
+    hist_sort = sorted(hist.items(), key=lambda x: x[1], reverse=True)
+    # 将key和value分开
+    data = []
+    for k, v in hist_sort:
+        tmp = {'name': k, 'value': v}
+        data.append(tmp)
+    # 将key和value分开
+    hist_address = []
+    hist_address_count = []
+    for k, v in hist_sort:
+        hist_address.append(k)
+        hist_address_count.append(v)
+    data_all = [job_count,hist_address,hist_address_count,data]#获取全部数据
+
+    return data_all
+
 def getkv_dict(jobnamestr):
+    """
+    主要为饼图数据准备:[{'name': '武汉', 'value': 2513}, {'name': '武汉-洪山区', 'value': 1531}...]
+    """
     # 职位总数
     job_count = job51.objects.filter(jobname=jobnamestr).count()
     # 区域列表
@@ -88,6 +125,14 @@ def jobAnalysis(request):
     data_pie_wh = getkv_dict("WHJSZC")
     data_pie_bj = getkv_dict("BJJSZC")
 
+    jobnamestr = "WHJSZC"
+    sqlchoice = "wages"
+    data_wh_wage_pie = getkv_dict_all(jobnamestr,sqlchoice)
+
+    jobnamestr = "BJJSZC"
+    sqlchoice = "wages"
+    data_bj_wage_pie = getkv_dict_all(jobnamestr, sqlchoice)
+
     return render(request,'echartapp/jobAnalysis.html',
                   {
                       'jobcount':data[0],
@@ -100,6 +145,12 @@ def jobAnalysis(request):
 
                       'pie_wh':data_pie_wh,
                       'pie_bj':data_pie_bj,
+
+                      'pie_wh_wage': data_wh_wage_pie[3][0:25],
+                      'pie_wh_wagename':data_wh_wage_pie[1][0:25],
+
+                      'pie_bj_wage': data_bj_wage_pie[3][0:25],
+                      'pie_bj_wagename': data_bj_wage_pie[1][0:25],
 
                       'wage_count_wh':data_wage_wh[0],
                       'wage_name_wh':data_wage_wh[1],
