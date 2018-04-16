@@ -12,8 +12,8 @@
 <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
 <div id="main" style="width:1280px;height:850px;"></div>
 <script type="text/javascript">
-    var uptime =; {{ uptime|safe}}
-    var dev_float={{ dev_float|safe }}
+    var uptime ={{ uptime|safe}};
+    var dev_float={{ dev_float|safe }};
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
 
