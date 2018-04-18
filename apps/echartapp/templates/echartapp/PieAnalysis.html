@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入 ECharts 文件 使用 static 关键字-->
+    <script src="{% static 'echartapp/js/echarts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'echartapp/js/Analysis_pie.js' %}"></script>
+    <title>51job职位分析</title>
+</head>
+<body>
+
+{% for main in main_count %}
+    <div id="{{ main|safe }}" style="width:1280px;height:850px;"></div>
+{% endfor %}
+
+<script type="text/javascript">
+    var i = 0;
+    getId = function () {
+    return i++;
+    };
+     var j = 0;
+    getIdj = function () {
+    return j++;
+    };
+    //get_jobname = function (i){
+    //    var name = new Array();
+     //   name={{ jobname|safe }};
+    //return name[i];
+    //};
+    window.onload=function(){
+        {% for tmp_one in data_pie %}
+            pie_js({{ tmp_one|safe }},getId());
+        {% endfor %}
+    }
+</script>
+
+</body>
+</html>

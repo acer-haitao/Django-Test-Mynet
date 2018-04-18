@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 import json
@@ -20,7 +20,7 @@ def jobWages(jobnamestr):
     job_wages = job51.objects.filter(jobname=jobnamestr).values_list('wages', flat=True)
     hist = {}
     for word in job_wages:
-        if word not in hist:  # 生成列表并统计个数
+        if word not in hist: # 生成列表并统计个数
             hist[word] = 1
         else:
             hist[word] = hist[word] + 1
@@ -88,8 +88,7 @@ def getkv_dict_all(jobnamestr,sqlchoice):
     for k, v in hist_sort:
         hist_address.append(k)
         hist_address_count.append(v)
-    data_all = [job_count,hist_address,hist_address_count,data]#获取全部数据
-
+    data_all = [jobnamestr,job_count,hist_address[0:25],hist_address_count,data[0:25]]#获取全部数据
     return data_all
 
 def getkv_dict(jobnamestr):
@@ -116,15 +115,18 @@ def getkv_dict(jobnamestr):
     return data
 
 def jobAnalysis(request):
+
     data_wage_bj = jobWages("BJJSZC")
     data_wage_wh = jobWages("WHJSZC")
 
     data = jobAddress("WHJSZC")
     data_bj = jobAddress("BJJSZC")
 
+    #饼图
     data_pie_wh = getkv_dict("WHJSZC")
     data_pie_bj = getkv_dict("BJJSZC")
 
+    #wages
     jobnamestr = "WHJSZC"
     sqlchoice = "wages"
     data_wh_wage_pie = getkv_dict_all(jobnamestr,sqlchoice)
@@ -132,6 +134,14 @@ def jobAnalysis(request):
     jobnamestr = "BJJSZC"
     sqlchoice = "wages"
     data_bj_wage_pie = getkv_dict_all(jobnamestr, sqlchoice)
+
+    # jobnamestr = "python_BJ"
+    # sqlchoice = "wages"
+    # data_wh_wage_pie = getkv_dict_all(jobnamestr, sqlchoice)
+    #
+    # jobnamestr = "python_WH"
+    # sqlchoice = "wages"
+    # data_bj_wage_pie = getkv_dict_all(jobnamestr, sqlchoice)
 
     return render(request,'echartapp/jobAnalysis.html',
                   {
@@ -193,8 +203,8 @@ def line3d():
         y = (1 + 0.25 * math.cos(75 * _t)) * math.sin(_t)
         z = _t + 2.0 * math.sin(75 * _t)
         _data.append([x, y, z])
-    range_color = ['#313695', '#4575b4', '#74add1', '#abd9e9', 
-                   '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', 
+    range_color = ['#313695', '#4575b4', '#74add1', '#abd9e9',
+                   '#e0f3f8', '#ffffbf', '#fee090', '#fdae61',
                    '#f46d43', '#d73027', '#a50026']
     line3d = Line3D("3D line plot demo", width=1200, height=600)
     line3d.add("", _data, is_visualmap=True, visual_range_color=range_color,
@@ -250,3 +260,45 @@ def barchart(request):
 
 def piechart(request):
     return render(request, 'echartapp/piechart.html')
+
+def PieAnalysis(request):
+    """
+    1 各职位总数--main 2 各职位名称--python 3
+    """
+    jobname_list = job51.objects.values_list('jobname',flat=True)#查询某一列
+
+    hist = {}
+    for word in jobname_list:
+        if word not in hist:  # 生成列表并统计个数
+            hist[word] = 1
+        else:
+            hist[word] = hist[word] + 1
+    # 字典排序[('BJJSZC', 17402), ('WHJSZC', 8799), ('python_BJ', 145), ('python_WH', 49)]
+    hist_sort = sorted(hist.items(), key=lambda x: x[1], reverse=True)
+    jobname_key =[]
+    jobname_value = []
+    for k, v  in hist_sort:
+        jobname_key.append(k)
+        jobname_value.append(v)
+    len_jobname =[]
+    for tmp in range(2*len(jobname_key)):
+        len_jobname.append(tmp)
+    all_data = []
+    for jobnamestr in jobname_key:
+        sqlchoice1 = 'wages'
+        sqlchoice2 = 'address'
+        data1 = getkv_dict_all(jobnamestr, sqlchoice1)
+        data2 = getkv_dict_all(jobnamestr, sqlchoice2)
+        all_data.append(data1)
+        all_data.append(data2)
+
+
+    return render(request,'echartapp/PieAnalysis.html',
+                  {
+                      'jobname':jobname_key,
+                      'main_count':len_jobname,
+                      'data_pie':all_data,
+                  }
+                  )
+
+

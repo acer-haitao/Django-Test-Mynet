@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^index1/$', ht_index.index1, name='index1'),
     url(r'^article/',app01views.arcticle,name='article'),
     url(r'^Analysis/',views.jobAnalysis,name='Analysis'),
+    url(r'^PieAnalysis/', views.PieAnalysis, name='PieAnalysis'),
     url(r'', ht_index.index, name='index'),
 ]
