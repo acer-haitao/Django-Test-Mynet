@@ -281,16 +281,19 @@ def PieAnalysis(request):
         jobname_key.append(k)
         jobname_value.append(v)
     len_jobname =[]
-    for tmp in range(2*len(jobname_key)):
+    for tmp in range(3*len(jobname_key)):
         len_jobname.append(tmp)
     all_data = []
     for jobnamestr in jobname_key:
         sqlchoice1 = 'wages'
         sqlchoice2 = 'address'
+        sqlchoice3 = 'date'
         data1 = getkv_dict_all(jobnamestr, sqlchoice1)
         data2 = getkv_dict_all(jobnamestr, sqlchoice2)
+        data3 = getkv_dict_all(jobnamestr, sqlchoice3)
         all_data.append(data1)
         all_data.append(data2)
+        all_data.append(data3)
 
 
     return render(request,'echartapp/PieAnalysis.html',
