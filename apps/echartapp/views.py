@@ -157,10 +157,10 @@ def jobAnalysis(request):
                       'pie_bj':data_pie_bj,
 
                       'pie_wh_wage': data_wh_wage_pie[3][0:25],
-                      'pie_wh_wagename':data_wh_wage_pie[1][0:25],
+                      'pie_wh_wagename':data_wh_wage_pie[2][0:25],
 
                       'pie_bj_wage': data_bj_wage_pie[3][0:25],
-                      'pie_bj_wagename': data_bj_wage_pie[1][0:25],
+                      'pie_bj_wagename': data_bj_wage_pie[2][0:25],
 
                       'wage_count_wh':data_wage_wh[0],
                       'wage_name_wh':data_wage_wh[1],
