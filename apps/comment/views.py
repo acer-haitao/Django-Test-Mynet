@@ -13,12 +13,12 @@ def net163(request):
         elif request.GET:
             cur_page = int(request.GET['cur_page'])
         else:
-            print("数据传输有误")
+            cur_page = 1
     except ValueError:
         cur_page = 1
     #自定义分页类
     pagination = Pagination.create_pagination(
-            from_name='comment.models',
+            from_name='apps.comment.models',
             model_name='comment',
             cur_page=cur_page,
             start_page_omit_symbol='...',

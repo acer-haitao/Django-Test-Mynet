@@ -16,13 +16,12 @@ def job(request):
         elif request.GET:
             cur_page = int(request.GET['cur_page'])
         else:
-            print("Erro Trans")
             cur_page = 1
     except ValueError:
         cur_page = 1
     if cur_page >= 1:
         pagination = pageshow.Pagination.create_pagination(
-                from_name='job51.models',
+                from_name='apps.job51.models',
                 model_name='job51',
                 cur_page=cur_page,
                 start_page_omit_symbol='...',
@@ -33,7 +32,7 @@ def job(request):
         )#分页数目
     else:
         pagination = pageshow.Pagination.create_pagination(
-                from_name='job51.models',
+                from_name='apps.job51.models',
                 model_name='job51',
                 cur_page=1,
                 start_page_omit_symbol='...',
