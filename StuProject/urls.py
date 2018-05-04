@@ -7,6 +7,7 @@ from apps.guestbook import views as guest_views
 from apps.comment import views as net163_views
 from apps.echartapp import views
 from apps.app01 import views as app01views
+
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^deleteid',guest_views.deleteid),
@@ -16,6 +17,7 @@ urlpatterns = [
     url('^comment/',guest_views.comment),
     url(r'^net163', net163_views.net163),
     url(r'^job',job_views.job),
+    url(r'^txt/$', job_views.txt),
     url(r'^search',include('haystack.urls')),
     url(r'^pychart3d/$', views.pyechart3d, name='pychart3d'),
     # 使用 echarts.js  渲染，并在 Web 页面展示折线图...

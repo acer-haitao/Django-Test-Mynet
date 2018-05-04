@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from apps.job51 import models
 from apps.job51 import pageshow
 
 # Create your views here.
@@ -42,3 +42,13 @@ def job(request):
                 form_post=form_post,
         )  # 分页数目
     return render(request, "job.html", {'pagination': pagination})
+
+def txt(request):
+    search_txt = 'python'
+    if request.method == 'POST':
+        search_txt = request.POST.get('txt')
+    if search_txt:
+        txt = models.job51.objects.filter(jobname=search_txt)
+    else:
+        txt = models.job51.objects.filter(jobname='WHJSZC')
+    return render(request,'jobtxt.html',{'txt':txt})

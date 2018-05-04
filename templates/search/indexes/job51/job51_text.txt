@@ -5,4 +5,5 @@
 {{object.wages}}
 {{object.date}}
 {{object.joburl}}
+{{object.jobaddress}}
 

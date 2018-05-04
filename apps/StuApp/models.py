@@ -18,3 +18,6 @@ class TabName(models.Model):
     def __str__(self):
         tpl = '<TabName:[Num={Num},TabName={TabName}]>'
         return tpl.format(Num=self.Num,TabName=self.TabName)
+    class Meta:
+        verbose_name = u"TabName"
+        verbose_name_plural = verbose_name

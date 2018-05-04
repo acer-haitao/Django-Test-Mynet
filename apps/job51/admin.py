@@ -8,7 +8,7 @@ class job51Admin(admin.ModelAdmin):
     #显示
     list_display = ('id','job','company','address','wages','date','jobname','joburl','jobaddress')
     #显示条数
-    list_per_page = 50
+    list_per_page = 100
     #显示排序
     ordering=('-date',)
     #显示编辑

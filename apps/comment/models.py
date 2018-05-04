@@ -7,3 +7,6 @@ class comment(models.Model):
     def __str__(self):
         tp = '<comment:[txt:{txt},footer:{footer}]>'
         return tp.format(txt=self.txt,footer=self.footer)
+    class Meta:
+        verbose_name = u"评论整合后脚本"
+        verbose_name_plural = verbose_name
