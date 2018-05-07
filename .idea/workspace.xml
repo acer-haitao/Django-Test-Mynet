@@ -1,45 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/templates/job.html" description="&lt;a class=&quot;tab-item external active&quot; href=&quot;?cur_pag..." line="89" />
+    <bookmark url="file://$PROJECT_DIR$/templates/job.html" description="&lt;a class=&quot;tab-item external active&quot; href=&quot;?cur_pag..." line="96" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a047b5b-3469-4205-a87a-4492b69beef2" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_g3t39k8xhz93xo6j.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_ik8xn4ka8gj8rrqu.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_mqofnkskqxcr32lq.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_mw27jn8oa1m320pb.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_nv80eio1lrwxuzva.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_oocd1716l4gusb96.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_ron8fkoz4p69enk6.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_uqz397k8alh6e3yr.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_x2fzog9nph728seq.seg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StuProject/whoosh_index/_MAIN_9.toc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/jobtxt.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_0tm1k7z3n92p9qki.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_7wz63d8noykbespt.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_hecr46gdb26eti0w.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_lxvqi91nowgk2vs9.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_pdhp88si9247l2qh.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_rnfa72168ahdq2xz._stored.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_rnfa72168ahdq2xz._text_len.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_rnfa72168ahdq2xz.pst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_rnfa72168ahdq2xz.text.col" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/MAIN_rnfa72168ahdq2xz.trm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StuProject/whoosh_index/_MAIN_5.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3-journal" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StuProject/urls.py" afterPath="$PROJECT_DIR$/StuProject/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/StuApp/models.py" afterPath="$PROJECT_DIR$/apps/StuApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/comment/models.py" afterPath="$PROJECT_DIR$/apps/comment/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/echartapp/templates/echartapp/PieAnalysis.html" afterPath="$PROJECT_DIR$/apps/echartapp/templates/echartapp/PieAnalysis.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/guestbook/admin.py" afterPath="$PROJECT_DIR$/apps/guestbook/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/job51/admin.py" afterPath="$PROJECT_DIR$/apps/job51/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/job51/views.py" afterPath="$PROJECT_DIR$/apps/job51/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/job.html" afterPath="$PROJECT_DIR$/templates/job.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/search/indexes/job51/job51_text.txt" afterPath="$PROJECT_DIR$/templates/search/indexes/job51/job51_text.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/search/search.html" afterPath="$PROJECT_DIR$/templates/search/search.html" />
     </list>
     <list id="2eb1051a-2c3e-4348-8a9d-e8821b16205d" name="提交失败:默认的" comment="添加echarts图表数据分析---优化外部js调用" />
     <ignored path="StuProject.iws" />
@@ -54,7 +23,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/StuProject$manage.coverage" NAME="manage Coverage Results" MODIFIED="1525391819787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/StuProject$manage.coverage" NAME="manage Coverage Results" MODIFIED="1525661638282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/StuProject$tests.coverage" NAME="tests Coverage Results" MODIFIED="1520901983030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job51" />
     <SUITE FILE_PATH="coverage/StuProject$views.coverage" NAME="views Coverage Results" MODIFIED="1523933747210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/echartapp" />
     <SUITE FILE_PATH="coverage/StuProject$test.coverage" NAME="test Coverage Results" MODIFIED="1523944468828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps" />
@@ -84,26 +53,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jobtxt.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/jobtxt.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test12345.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/test12345.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="suih5.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/suih5.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,8 +86,18 @@
       <file leaf-file-name="job.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/job.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-43.846153">
-              <caret line="57" column="92" selection-start-line="57" selection-start-column="92" selection-end-line="57" selection-end-column="92" />
+            <state vertical-scroll-proportion="-6.974359">
+              <caret line="65" column="84" selection-start-line="65" selection-start-column="84" selection-end-line="65" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="49.94872">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -164,21 +123,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PieAnalysis.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PieAnalysis.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/echartapp/templates/echartapp/PieAnalysis.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08287293">
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            <state vertical-scroll-proportion="-4.974359">
+              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/search/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="3.0769231">
+              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.461538">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.30612245">
+              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -247,7 +216,6 @@
         <option value="$PROJECT_DIR$/apps/echartapp/static/echartapp/js/Analysis_pie.js" />
         <option value="$PROJECT_DIR$/apps/echartapp/views.py" />
         <option value="$PROJECT_DIR$/apps/comment/views.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/comment.html" />
         <option value="$PROJECT_DIR$/apps/job51/models.py" />
         <option value="$PROJECT_DIR$/templates/search/indexes/job51/job51_text.txt" />
@@ -259,8 +227,9 @@
         <option value="$PROJECT_DIR$/StuProject/urls.py" />
         <option value="$PROJECT_DIR$/templates/jobtxt.html" />
         <option value="$PROJECT_DIR$/apps/job51/views.py" />
-        <option value="$PROJECT_DIR$/templates/job.html" />
         <option value="$PROJECT_DIR$/apps/echartapp/templates/echartapp/PieAnalysis.html" />
+        <option value="$PROJECT_DIR$/templates/job.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -314,6 +283,30 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="StuProject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StuProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StuProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StuProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StuProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -372,7 +365,7 @@
       <module name="StuProject" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="runserver 192.168.3.50:8000" />
+      <option name="PARAMETERS" value="runserver 192.168.2.246:8000" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
@@ -787,7 +780,13 @@
       <option name="project" value="LOCAL" />
       <updated>1524186922665</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="5月4号更新数据库">
+      <created>1525425724772</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1525425724772</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -797,20 +796,20 @@
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49183005" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34640524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32659933" sideWeight="0.51073617" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29738563" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29738563" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24836601" sideWeight="0.4892638" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34640524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2777778" sideWeight="0.4892638" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -851,7 +850,8 @@
     <MESSAGE value="优化js加载代码,传入js参数优化" />
     <MESSAGE value="修复job51及comment的views导入增加apps" />
     <MESSAGE value="job51新增数据库字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="job51新增数据库字段" />
+    <MESSAGE value="5月4号更新数据库" />
+    <option name="LAST_COMMIT_MESSAGE" value="5月4号更新数据库" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -934,13 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1051,13 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/search/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7948718">
-          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1205,22 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.461538">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/job.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-43.846153">
-          <caret line="57" column="92" selection-start-line="57" selection-start-column="92" selection-end-line="57" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/echartapp/templates/echartapp/jobAnalysis.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="15.333333">
@@ -1239,8 +1209,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/echartapp/templates/echartapp/PieAnalysis.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08287293">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        <state vertical-scroll-proportion="-4.974359">
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0769231">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/job.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.974359">
+          <caret line="65" column="84" selection-start-line="65" selection-start-column="84" selection-end-line="65" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="49.94872">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30612245">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
           <folding />
         </state>
       </provider>
