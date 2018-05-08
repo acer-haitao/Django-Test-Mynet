@@ -22,7 +22,7 @@
             <div class="searchbar">
                 <a class="searchbar-cancel">取消</a>
                 <div class="search-input">
-                    <form  action="/job" method="post">
+                    <form  action="/job/" method="post">
                         {% csrf_token %}
                         <label class="icon icon-search" for="search"></label>
                         <input type="search" id='search' name="key" placeholder='输入地点、日期、职称名称......'/>

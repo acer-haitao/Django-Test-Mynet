@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^create',guest_views.create),
     url('^comment/',guest_views.comment),
     url(r'^net163', net163_views.net163),
-    url(r'^job',job_views.job),
+    url(r'^job/$',job_views.job),
     url(r'^txt/$', job_views.txt),
     url(r'^search',include('haystack.urls')),
     url(r'^pychart3d/$', views.pyechart3d, name='pychart3d'),
@@ -34,5 +34,6 @@ urlpatterns = [
     url(r'^article/',app01views.arcticle,name='article'),
     url(r'^Analysis/',views.jobAnalysis,name='Analysis'),
     url(r'^PieAnalysis/', views.PieAnalysis, name='PieAnalysis'),
+    url(r'^jobdelete/$', job_views.jobdelete, name='jobdelete'),
     url(r'', ht_index.index, name='index'),
 ]

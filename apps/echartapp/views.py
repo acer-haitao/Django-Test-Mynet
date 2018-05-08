@@ -298,6 +298,7 @@ def PieAnalysis(request):
 
     return render(request,'echartapp/PieAnalysis.html',
                   {
+                      'hist_sort':hist_sort,
                       'jobname':jobname_key,
                       'main_count':len_jobname,
                       'data_pie':all_data,
