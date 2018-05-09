@@ -31,25 +31,10 @@
             background-size: cover;
             background-position: center;
         }
-        #video_controls {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, 0);
-        }
-        #play img {
-            width: 100px;
-        }
-        #pause img {
-            width: 90px;
-        }
-        #pause {
-            display: none;
-        }
-        @media (min-width: 768px) {
-            #video_controls {
-                display: none;
-            }
-        }
+
+
+
+
         /* Demo page specific styles */
         #overlay {
             position: absolute;
@@ -78,15 +63,11 @@
         #footer a:last-child {
             float: right; text-align: right;
         }
-        .ad_76090{
-            width: 760px; height: 90px; margin: 0 auto;
-        }
-        .hidden{display: none}
+        
         @media screen and (min-width: 320px) and (max-width : 480px) {
             #main_content {top:60%;}
             #main_content h1 {font-size: 1.2rem}
             html{-webkit-text-size-adjust: none;}
-            .ad_76090,.ad_demo{width:100%; height:auto; margin:20px auto;text-align:center}
         }
     </style>
     <!--背景end-->
@@ -97,14 +78,6 @@
     <video id="background_video" loop muted></video>
     <div id="video_cover"></div>
     <div id="overlay"></div>
-    <div id="video_controls">
-      <span id="play">
-        <img src="images/play.png">
-      </span>
-      <span id="pause">
-        <img src="images/pause.png">
-      </span>
-    </div>
     <section id="main_content">
         <!--步骤条-->
         <div class="sui-steps steps-auto steps-large">
@@ -188,6 +161,7 @@
                 <table class="sui-table table-bordered">
                     <thead>
                     <tr>
+                        <th>ID</th>
                         <th>日期</th>
                         <th>工作</th>
                         <th>地址</th>
@@ -199,12 +173,15 @@
                     <tbody style="overflow-y:scroll">
                     {% for tmp in txt %}
                         <tr style="color: #f9f9f9;">
+                            <td>{{ forloop.counter }}</td>
                             <td>{{ tmp.date }}</td>
                             <td>{{ tmp.job }}</td>
                             <td>{{tmp.jobaddress}}</td>
                             <td>{{ tmp.wages }}</td>
                             <td>{{ tmp.joburl}}</td>
                         </tr>
+                    {% empty %}
+
                     {% endfor %}
                     </tbody>
                 </table>

@@ -24,7 +24,7 @@
         <div class="content-block-title">{{ tmp.date }}-{{ tmp.job }}-{{tmp.address}}-{{ tmp.wages }}-{{ tmp.jobname }}-{{ tmp.jobaddress }}</div>
         <div class="card">
             <div class="card-content">
-                <div class="card-content-inner">{{tmp.jobtxt|linebreaks}}</div>
+                <div class="card-content-inner">{{tmp.jobtxt|linebreaks|striptags}}</div>
             </div>
         </div>
     {% endfor %}

@@ -43,7 +43,7 @@
                         <td>&#12288&#12288{% highlight result.object.job with query max_length 40 %} </td>
                         <td> {% highlight result.object.jobaddress with query max_length 40 %}</td>
                         <td> {{ result.object.company}}</td>
-                        <td onclick="window.open('{{ result.object.joburl}}')">{{ result.object.joburl}}</td>
+                        <td onclick="window.open('{{ result.object.joburl}}')">{{ result.object.joburl|urlize }}</td>
                         <td>{{ result.object.wages}}</td>
                         <td>{{ result.object.date}}</td>
                     </tr>
