@@ -76,7 +76,7 @@ def jobdelete(request):
             txt = models.job51.objects.filter(Q(date=data)|Q(jobname=data)|Q(wages=data)).all()
             sum = txt.count()
             tmp = copy.copy(txt)#浅拷贝删除原始数据后现有数据不会一块删除
-            txt.delete()
+            #txt.delete()
             return render(request, 'jobdelete.html',{'status':'1','txt':tmp,'sum':sum})
         else:
             print("pwd error")

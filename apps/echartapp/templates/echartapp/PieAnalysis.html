@@ -25,7 +25,8 @@
 
 </head>
 <body>
-        <ul class="sui-nav  nav-tabs tab-wraped">
+<div id="test" style="width:1280px;height:auto;">
+        <ul class="sui-nav column5  nav-tabs tab-wraped">
             {% for tmp in hist_sort %}
                     <li>
                         <a  data-toggle="tab">
@@ -37,10 +38,9 @@
                             </ul>
                         </a>
                     </li>
-
             {% endfor %}
         </ul>
-
+</div>
 {% for main in main_count %}
     <div id="{{ main|safe }}" style="width:1280px;height:850px;"></div>
 {% endfor %}

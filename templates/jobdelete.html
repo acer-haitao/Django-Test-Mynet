@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <title>数据库数据删除</title>
@@ -8,36 +9,131 @@
     <link href="http://g.tbcdn.cn/sj/wqui/1.0.0/css/sui.min.css" rel="stylesheet">
     <script type="text/javascript" src="http://g.tbcdn.cn/sj/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="http://g.tbcdn.cn/sj/wqui/1.0.0/js/sui.min.js"></script>
-
+    <!--背景start-->
+    <style>
+        #container {
+            overflow: hidden;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            height: 100%;
+        }
+        #background_video {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            height: 100%; width: 100%;
+        }
+        #video_cover {
+            position: absolute;
+            width: 100%; height: 100%;
+            background: url({% static '/job51/other/video_cover.jpeg'%}) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #video_controls {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        #play img {
+            width: 100px;
+        }
+        #pause img {
+            width: 90px;
+        }
+        #pause {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            #video_controls {
+                display: none;
+            }
+        }
+        /* Demo page specific styles */
+        #overlay {
+            position: absolute;
+            top: 0; right: 0; left: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        #main_content {
+            overflow: auto;
+            position: absolute;
+            top: 0px; left: 0px; right: 0px; bottom: 0;
+        }
+        #footer {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            color: #fff;
+        }
+        #footer a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin: 10px;
+            font-size: 12px;
+        }
+        #footer a:first-child {
+            float: left;
+        }
+        #footer a:last-child {
+            float: right; text-align: right;
+        }
+        .ad_76090{
+            width: 760px; height: 90px; margin: 0 auto;
+        }
+        .hidden{display: none}
+        @media screen and (min-width: 320px) and (max-width : 480px) {
+            #main_content {top:60%;}
+            #main_content h1 {font-size: 1.2rem}
+            html{-webkit-text-size-adjust: none;}
+            .ad_76090,.ad_demo{width:100%; height:auto; margin:20px auto;text-align:center}
+        }
+    </style>
+    <!--背景end-->
 </head>
 <body>
-<!--步骤条-->
-<div class="sui-steps steps-auto steps-large">
-    <div class="wrap">
-        <div class="finished">
-            <label><span class="round"><i class="sui-icon icon-pc-right"></i></span><span>第一步:主题处选择对应字段例如:05-04/WHJSZC</span></label><i class="triangle-right-bg"></i><i class="triangle-right"></i>
-        </div>
+<!--start-->
+<div id="container">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+    <div id="video_controls">
+      <span id="play">
+        <img src="images/play.png">
+      </span>
+      <span id="pause">
+        <img src="images/pause.png">
+      </span>
     </div>
-    <div class="wrap">
-        <div class="current">
-            <label><span class="round">2 </span><span>第二步:审核人处输入密码</span></label><i class="triangle-right-bg"></i><i class="triangle-right"></i>
+    <section id="main_content">
+        <!--步骤条-->
+        <div class="sui-steps steps-auto steps-large">
+            <div class="wrap">
+                <div class="finished">
+                    <label><span class="round"><i class="sui-icon icon-pc-right"></i></span><span>第一步:主题处输入关键字例如:05-04或者WHJSZC</span></label><i class="triangle-right-bg"></i><i class="triangle-right"></i>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="current">
+                    <label><span class="round">2 </span><span>第二步:审核人处输入密码</span></label><i class="triangle-right-bg"></i><i class="triangle-right"></i>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="todo">
+                    <label><span class="round">3</span><span>第三步:提交，完成删库跑路</span></label>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="wrap">
-        <div class="todo">
-            <label><span class="round">3</span><span>第三步:提交，完成删库跑路</span></label>
-        </div>
-    </div>
-</div>
 
-<!--表单-->
-<form class="sui-form form-horizontal"  action="/jobdelete/" method="POST" >
-    {% csrf_token %}
-    <div class="control-group">
-        <label class="control-label v-top"><b style="color: #f00;">*</b> <span style="padding:0 24px 0 0;">主</span>题：</label>
-        <div class="controls">
+        <!--表单-->
+        <div>
+            <form class="sui-form form-horizontal"  action="/jobdelete/" method="POST" >
+                {% csrf_token %}
+                <div class="control-group">
+                    <label class="control-label v-top" style="color: #ffff00;"><b style="color: #f00;">*</b> <span style="padding:0 24px 0 0;">主</span>题：</label>
+                    <div class="controls">
             <span class="sui-dropdown dropdown-bordered select"><span class="dropdown-inner"><a id="drop4" role="button" data-toggle="dropdown" href="#" class="dropdown-toggle">
-                <input value="date" name="type" type="hidden"><i class="caret"></i><span>输入要删除的日期:04-07</span></a>
+                <input value="date" name="type" type="hidden"><i class="caret"></i><span style="color: #f9f9f9;">输入要删除的日期:04-07</span></a>
 
               <ul id="menu4" role="menu" aria-labelledby="drop4" class="sui-dropdown-menu">
                   <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="date">输入要删除的日期:04-07</a></li>
@@ -47,79 +143,91 @@
               </ul>
             </span>
             </span>
-            <input value="" name = "data" class="input-xlarge" type="text">
-            <div class="sui-msg msg-tips">
-                <div class="msg-con"><strong>提示</strong>要删除的关键字段</div>
-                <s class="msg-icon"></s>
-            </div>
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label"><b style="color: #f00;">*</b>
-            审<span style="padding: 0 6px;">核</span>人：
-        </label>
-        <div class="controls">
+                        <input value="" name = "data" class="input-xlarge" type="text">
+                        <div class="sui-msg msg-tips">
+                            <div class="msg-con"><strong>提示</strong>要删除的关键字段</div>
+                            <s class="msg-icon"></s>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" style="color: #ffff00;"><b style="color: #f00;">*</b>
+                        审<span style="padding: 0 6px;">核</span>人：
+                    </label>
+                    <div class="controls">
             <span class="sui-dropdown dropdown-bordered select">
                 <span class="dropdown-inner"><a id="drop4" role="button" data-toggle="dropdown" href="#" class="dropdown-toggle">
-                    <input value="haitao" name="zt" type="hidden"><i class="caret"></i><span>管理员</span></a>
+                    <input value="haitao" name="zt" type="hidden"><i class="caret"></i><span style="color: #fffff9;">管理员</span></a>
               <ul id="menu4" role="menu" aria-labelledby="drop4" class="sui-dropdown-menu">
                   <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="1">管理员</a></li>
               </ul>
                 </span>
             </span>
-            <input value="" name = "pwd" class="input-xlarge" type="text">
-            <div class="sui-msg msg-tips">
-                <div class="msg-con"><strong>提示</strong>请输入关键字</div>
-                <s class="msg-icon"></s>
+                        <input value="" name = "pwd" class="input-xlarge" type="text">
+                        <div class="sui-msg msg-tips">
+                            <div class="msg-con"><strong>提示</strong>请输入关键字</div>
+                            <s class="msg-icon"></s>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="sui-btn btn-primary">提交审核</button>
+                        <button type="reset" class="sui-btn">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% if status %}
+            {% if status == '1'%}
+                <div class="sui-msg msg-success msg-block">
+                    <div class="msg-con"><strong>删除成功</strong>共{{ sum }}条记录<a class="remove"><i class="sui-icon icon-pc-error"></i></a></div><i class="msg-icon"></i>
+                </div>
+
+                <table class="sui-table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>工作</th>
+                        <th>地址</th>
+                        <th>薪资</th>
+                        <th>链接</th>
+                    </tr>
+                    </thead>
+
+                    <tbody style="overflow-y:scroll">
+                    {% for tmp in txt %}
+                        <tr style="color: #f9f9f9;">
+                            <td>{{ tmp.date }}</td>
+                            <td>{{ tmp.job }}</td>
+                            <td>{{tmp.jobaddress}}</td>
+                            <td>{{ tmp.wages }}</td>
+                            <td>{{ tmp.joburl}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% elif status == '2' %}
+                <div class="sui-msg msg-error msg-block">
+                    <div class="msg-con"><strong>删除失败,{{ pwderro }}</strong>共{{ sum }}条记录<a class="remove"><i class="sui-icon icon-pc-error"></i></a></div><i class="msg-icon"></i>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="sui-msg msg-error msg-block">
+                <div class="msg-con"><strong>请输入要删除的数据库字段和密码</strong><a class="remove"><i class="sui-icon icon-pc-error"></i></a></div><i class="msg-icon"></i>
             </div>
-        </div>
-    </div>
+        {% endif %}
 
-    <div class="control-group">
-        <div class="controls">
-            <button type="submit" class="sui-btn btn-primary">提交审核</button>
-            <button type="reset" class="sui-btn">重置</button>
-        </div>
-    </div>
-</form>
+    </section>
+</div>
+<!--end-->
+<div id="footer">
+    <a>视频源来自网络，如有侵权请立即通知我们删除。</a>
+    <a>daydayup11.cn</a>
+</div>
 
-{% if status %}
-    {% if status == '1'%}
-        <div class="sui-msg msg-success msg-block">
-            <div class="msg-con"><strong>删除成功</strong>共{{ sum }}条记录<a class="remove"><i class="sui-icon icon-pc-error"></i></a></div><i class="msg-icon"></i>
-        </div>
-        <table class="sui-table table-bordered">
-            <thead>
-            <tr>
-                <th>日期</th>
-                <th>工作</th>
-                <th>地址</th>
-                <th>薪资</th>
-                <th>链接</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for tmp in txt %}
-                <tr>
-                    <td>{{ tmp.date }}</td>
-                    <td>{{ tmp.job }}</td>
-                    <td>{{tmp.jobaddress}}</td>
-                    <td>{{ tmp.wages }}</td>
-                    <td>{{ tmp.joburl}}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    {% elif status == '2' %}
-        <div class="sui-msg msg-error msg-block">
-            <div class="msg-con"><strong>删除失败,{{ pwderro }}</strong>共{{ sum }}条记录<a class="remove"><i class="sui-icon icon-pc-error"></i></a></div><i class="msg-icon"></i>
-        </div>
-    {% endif %}
-{% else %}
-    <div class="sui-msg msg-error msg-block">
-        <div class="msg-con"><strong>请输入要删除的数据库字段和密码</strong><a class="remove"><i class="sui-icon icon-pc-error"></i></a></div><i class="msg-icon"></i>
-    </div>
-{% endif %}
-
+<script src={% static "job51/js/bideo.js" %}></script>
+<script src={% static "job51/js/main.js" %}></script>
 </body>
 </html>
