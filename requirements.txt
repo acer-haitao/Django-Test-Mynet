@@ -16,7 +16,7 @@ Flask-MySQLdb==0.2.0
 future==0.16.0
 get==0.0.21
 HTMLParser==0.0.2
-httplib2==0.10.3
+httplib2==0.18.0
 idna==2.6
 image==1.5.19
 itsdangerous==0.24
