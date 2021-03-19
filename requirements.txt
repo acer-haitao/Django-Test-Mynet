@@ -22,7 +22,7 @@ image==1.5.19
 itsdangerous==0.24
 itypes==1.1.0
 jieba==0.39
-Jinja2==2.10
+Jinja2==2.11.3
 jupyter-echarts-pypkg==0.1.0
 jupyter-pip==0.3.1
 kiwisolver==1.0.1
