@@ -77,7 +77,7 @@ SQLite3Database==0.2.0
 times==0.7
 tzlocal==1.5.1
 uritemplate==3.0.0
-urllib3==1.22
+urllib3==1.26.5
 urlopen==1.0.0
 Werkzeug==0.12.2
 Whoosh==2.7.4
