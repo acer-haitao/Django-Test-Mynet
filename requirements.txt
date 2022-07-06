@@ -27,7 +27,7 @@ jupyter-echarts-pypkg==0.1.0
 jupyter-pip==0.3.1
 kiwisolver==1.0.1
 lml==0.0.2
-lxml==3.8.0
+lxml==4.9.1
 macholib==1.9
 Mail==2.1.0
 Markdown==2.6.11
